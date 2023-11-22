@@ -17,6 +17,29 @@ Iniziamo implementando il programma senza alcuna estetica: usando esclusivamente
 //define conditions
 //print message(calcule result) on html page
 
+document.getElementById("submit").addEventListener('click', function(){
 
+    const number_km = document.getElementById('km').value;
+    console.log(number_km);
+    const passenger_age = document.getElementById('age').value;
+    console.log(passenger_age);
+    let ticket_price;
+
+if (passenger_age < 18) {
+    ticket_price = (number_km * 0.21 - 20/100 * (number_km * 0.21));
+    const messageElement = document.getElementById("message").innerHTML = `Il prezzo del biglietto è di € ${ticket_price.toFixed(2)}`
+
+
+} else if (passenger_age > 65) {
+    ticket_price = (number_km * 0.21 - 40/100 * (number_km * 0.21));    
+    const messageElement = document.getElementById("message").innerHTML = `Il prezzo del biglietto è di € ${ticket_price.toFixed(2)}`
+
+} else {
+    ticket_price = (number_km * 0.21);
+    const messageElement = document.getElementById("message").innerHTML = `Il prezzo del biglietto è di € ${ticket_price.toFixed(2)}`
+}
+
+}
+)
 
 
