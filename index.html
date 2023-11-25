@@ -4,24 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
     <title>Biglietto-treno-form</title>
 </head>
 
 <body>
-<div class="km-info">
-    <label for="km">Quanti Km vuoi percorrere?</label>
-    <input type="text" id="km" placeholder="Inserire Km">
-</div>
-<div class="age-info">
-    <label for="age">Quanti anni hai?</label>
-    <input type="text" id="age" placeholder="Inserire numero anni">
-</div>
-    <button id="submit">Save</button>
+    <h1>calcola il prezzo del tuo biglietto</h1>
 
+    <label for="age">Inserire età</label>
+    <input type="number" name="age" id="age">
+    <label for="km">Inserire km</label>
+    <input type="number" name="Km" id="Km">
+    <button id="generate">Genera</button>
 
-<div id="message"></div>
-
-
+    <h2>Prezzo del tuo biglietto</h2>
+    <div>Nome passeggero:</div>
+    <div>Offerta:</div>
+    <div>Carrozza:</div>
+    <div>Codice CP:</div>
+    <div id="price">Prezzo del biglietto:</div>
 
 
 

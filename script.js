@@ -17,29 +17,36 @@ Iniziamo implementando il programma senza alcuna estetica: usando esclusivamente
 //define conditions
 //print message(calcule result) on html page
 
-document.getElementById("submit").addEventListener('click', function(){
+const generateBtnElement = document.querySelector("#generate");
+const ageInputElement = document.querySelector("#age");
+const KmInputElement = document.querySelector("#km");
 
-    const number_km = document.getElementById('km').value;
-    console.log(number_km);
-    const passenger_age = document.getElementById('age').value;
-    console.log(passenger_age);
-    let ticket_price;
+const ageValue = parseInt(ageInputElement.Value);
+const KmValue = parseInt(KmInputElement.Value);
 
-if (passenger_age < 18) {
-    ticket_price = (number_km * 0.21 - 20/100 * (number_km * 0.21));
-    const messageElement = document.getElementById("message").innerHTML = `Il prezzo del biglietto è di € ${ticket_price.toFixed(2)}`
+let ticket_price
 
 
-} else if (passenger_age > 65) {
-    ticket_price = (number_km * 0.21 - 40/100 * (number_km * 0.21));    
-    const messageElement = document.getElementById("message").innerHTML = `Il prezzo del biglietto è di € ${ticket_price.toFixed(2)}`
+generateBtnElement.addEventListener("click", function () {
 
-} else {
-    ticket_price = (number_km * 0.21);
-    const messageElement = document.getElementById("message").innerHTML = `Il prezzo del biglietto è di € ${ticket_price.toFixed(2)}`
-}
+    if (ageValue < 18) {
+        ticket_price = (kmValue * 0.21 - 20 / 100 * (KmValue * 0.21));
+        const messageElement = document.querySelector("#price").innerHTML = ticket_price.toFixed(2)
 
+    } else if (ageValue > 65) {
+        ticket_price = (kmValue * 0.21 - 40 / 100 * (kmValue * 0.21));
+        const messageElement = document.querySelector("#price").innerHTML = ticket_price.toFixed(2)
+    } else {
+        ticket_price = (kmValue * 0.21);
+        const messageElement = document.querySelector("#price").innerHTML = ticket_price.toFixed(2)
+    }
 }
 )
+
+
+
+
+
+
 
 
