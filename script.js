@@ -17,29 +17,30 @@ Iniziamo implementando il programma senza alcuna estetica: usando esclusivamente
 //define conditions
 //print message(calcule result) on html page
 
-const generateBtnElement = document.querySelector("#generate");
-const ageInputElement = document.querySelector("#age");
-const KmInputElement = document.querySelector("#km");
+const generateBtnElement = document.getElementById('generate')
+const ageInputElement = document.getElementById('age');
+const kmInputElement = document.getElementById('km');
 
-const ageValue = parseInt(ageInputElement.Value);
-const KmValue = parseInt(KmInputElement.Value);
-
-let ticket_price
 
 
 generateBtnElement.addEventListener("click", function () {
-
+    
+    const ageValue = parseInt(ageInputElement.Value);
+    const kmValue = parseInt(kmInputElement.Value);
+    
     if (ageValue < 18) {
-        ticket_price = (kmValue * 0.21 - 20 / 100 * (KmValue * 0.21));
-        const messageElement = document.querySelector("#price").innerHTML = ticket_price.toFixed(2)
-
+        
+        ticket_price = (kmValue * 0,21 - (kmValue * 0,21));  
+        
     } else if (ageValue > 65) {
-        ticket_price = (kmValue * 0.21 - 40 / 100 * (kmValue * 0.21));
-        const messageElement = document.querySelector("#price").innerHTML = ticket_price.toFixed(2)
+        ticket_price = (kmValue * 0,21 - 0,40 * (kmValue * 0,21));
+        
     } else {
-        ticket_price = (kmValue * 0.21);
-        const messageElement = document.querySelector("#price").innerHTML = ticket_price.toFixed(2)
+        ticket_price = (kmValue * 0,21);
+            
     }
+    document.querySelector(".ageOutput").innerHTML = ageValue;
+    document.querySelector(".priceOutput").innerHTML = ticket_price.toFixed(2);
 }
 )
 
