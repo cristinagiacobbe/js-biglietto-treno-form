@@ -22,23 +22,20 @@ const ageInputElement = document.getElementById('age');
 const kmInputElement = document.getElementById('km');
 
 
-
 generateBtnElement.addEventListener("click", function () {
-    
-    const ageValue = parseInt(ageInputElement.Value);
-    const kmValue = parseInt(kmInputElement.Value);
-    
+    const ageValue = parseInt(ageInputElement.value);
+    const kmValue = parseInt(kmInputElement.value);
+
+    let ticket_price = (kmValue * 0.21);
+
     if (ageValue < 18) {
         
-        ticket_price = (kmValue * 0,21 - (kmValue * 0,21));  
+        ticket_price = (ticket_price - 0.20 * (ticket_price));  
         
     } else if (ageValue > 65) {
-        ticket_price = (kmValue * 0,21 - 0,40 * (kmValue * 0,21));
-        
-    } else {
-        ticket_price = (kmValue * 0,21);
-            
-    }
+        ticket_price = (ticket_price - 0.40 * (ticket_price));        
+    }       
+    
     document.querySelector(".ageOutput").innerHTML = ageValue;
     document.querySelector(".priceOutput").innerHTML = ticket_price.toFixed(2);
 }
